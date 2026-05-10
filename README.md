@@ -5,11 +5,7 @@
 - 输出相关性矩阵与因子平均夏普（不含交易成本）
 
 ## 免费数据源与对应品种
-- Yahoo Finance（yfinance）：美股日频价格与成交量
-- Stooq（pandas-datareader，可选）：部分期货/指数历史数据
-- Binance 公共REST（可选）：加密货币现货K线
-
-本项目默认使用 Yahoo Finance，美股大盘股横截面因子。
+- Yahoo Finance（yfinance）：美股日频价格与成交量,构建美股大盘股横截面因子。
 
 ## 因子说明
 - `mom_6_1`：6个月动量，跳过最近1个月
@@ -71,7 +67,6 @@ python run_pipeline.py --start 2018-01-01 --rebalance M --top-quant 0.2 --max-co
 
 控制最大相关性：默认用 `--max-corr 0.5` 进行贪心筛选，优先保留低相关因子。
 
-论文因子方向使用样本内夏普符号自动校准，用于满足正向回测展示需求。
 所有因子会进行简单分位参数搜索并保留夏普为正的结果。
 
 ## 参考文献
